@@ -10,7 +10,7 @@
 .nav-title {
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: flex-end;
 }
 
 .nav-title h2 {
@@ -21,7 +21,7 @@
 .navLinks {
    font-family: var(--primary-font-family);
    font-weight: 500;
-   width: 60%;
+   width: 50%;
    display: flex;
    justify-content: center;
 }
@@ -46,7 +46,7 @@
    height: 80px;
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: flex-end;
 }
 
 .links svg {
@@ -58,7 +58,7 @@
 .nav-login-btn {
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: flex-end;
 }
 
 .nav-login-btn button {
