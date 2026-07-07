@@ -1,12 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
 import Layout from './Components/Layout/Layout.jsx'
 import About from './pages/About/About.jsx'
 import Home from './pages/Home/Home.jsx'
 import Products from './pages/Products/Products.jsx'
+import Cart from './pages/Cart/Cart.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,6 +14,7 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />}/>
       <Route path='/about' element={<About />}/>
       <Route path='/products' element={<Products />}/>
+      <Route path='/cart' element={<Cart />} />
     </Route>
   )
 )

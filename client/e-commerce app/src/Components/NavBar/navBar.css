@@ -1,0 +1,69 @@
+.nav-bar-container {
+   background-color: var(--bg-color-heroSection);
+   height: 80px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+}
+
+.nav-title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.nav-title h2 {
+   color: var(--primary-font-color);
+   font-family: var(--primary-font-family);
+}
+
+.navLinks {
+   font-family: var(--primary-font-family);
+   font-weight: 500;
+   width: 60%;
+   display: flex;
+   justify-content: center;
+}
+
+.nav-bar-container ul{
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   gap: 70px;
+}
+
+.nav-bar-container ul li {
+   list-style: none;
+}
+
+.nav-bar-container ul li a {
+   text-decoration: none;
+   color: var(--primary-font-color);
+}
+
+.links {
+   height: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.links svg {
+   width: 33px;
+   height: 33px;
+   color: var(--primary-font-color);
+}
+
+.nav-login-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.nav-login-btn button {
+   padding: 10px 20px;
+   background-color: var(--bg-color-heroSection);
+   border: 1px solid var(--primary-font-color);
+   cursor: pointer;
+}
