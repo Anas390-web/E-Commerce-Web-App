@@ -17,7 +17,7 @@ function ProductCard() {
                <p>{item.name}</p>
                <div className='item-card-pricing'>
                   <p>${item.price}</p>
-                  |
+                  <p>|</p>
                   <p>{item.rating}⭐</p>
                </div>
             </div>
