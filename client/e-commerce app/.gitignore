@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 .env
+src/images
+src/Data/Dummy-Data
 
 # Editor directories and files
 .vscode/*

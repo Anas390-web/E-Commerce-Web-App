@@ -1,7 +1,7 @@
 .nav-bar-container {
    background-color: var(--bg-color-heroSection);
    height: 80px;
-   width: 100%;
+   width: auto; /*prev width: 50%*/
    display: flex;
    justify-content: center;
    gap: 30px;
@@ -21,7 +21,7 @@
 .navLinks {
    font-family: var(--primary-font-family);
    font-weight: 500;
-   width: 50%;
+   min-width: 50%; /*prev width: 50%*/
    display: flex;
    justify-content: center;
 }
@@ -66,4 +66,35 @@
    background-color: var(--bg-color-heroSection);
    border: 1px solid var(--primary-font-color);
    cursor: pointer;
+}
+
+/* MOBILE ALIGNMENT */
+@media (max-width: 768px) {
+  /* 1. Prevent the main bar from breaking height constraints */
+  .nav-bar-container {
+    padding: 0 20px;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  /* 2. Hide the main link group on mobile (until you build a hamburger menu) */
+  .navLinks {
+    display: none;
+  }
+
+  /* 3. Tighten up the gap between your icons/buttons so they don't look scattered */
+  .nav-bar-container ul {
+    gap: 20px;
+  }
+
+  /* 4. Shrink interactive elements slightly so they fit fingers cleanly without clutter */
+  .links svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nav-login-btn button {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
 }

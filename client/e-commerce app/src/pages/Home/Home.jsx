@@ -1,6 +1,7 @@
 import React from 'react'
 import './home.css'
 import HeadphonesImage from './../../images/headphones-black.png';
+import ProductCard from './bestSellingItems';
 
 function Home() {
   return (
@@ -20,6 +21,20 @@ function Home() {
           </div>
           <div className='hero-container-image'>
             <img src={HeadphonesImage} alt="Headphones" />
+          </div>
+        </div>
+      </section>
+      <section className='best-selling-section'>
+        <div className='best-selling-container'>
+          <div className='best-selling-title'>
+            <p className='title'>Best selling</p>
+            <p>Get in on the trend with our curated selection of best-selling products.</p>
+          </div>
+          <div className='best-selling-items-container'>
+            <ProductCard />
+          </div>
+          <div className='see-all-btn'>
+            <button>See all →</button>
           </div>
         </div>
       </section>

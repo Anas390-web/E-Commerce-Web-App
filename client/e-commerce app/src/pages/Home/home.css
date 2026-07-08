@@ -1,22 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Rufina:wght@400;700&family=Shadows+Into+Light&display=swap');
+
+
 .hero-container {
-   height: 650px;
+   /* height: 650px; */
+   min-height: 70vh;
    width: 100%;
    background-color: var(--bg-color-heroSection);
    display: flex;
+   flex-wrap: wrap;
    justify-content: center;
    align-items: center;
 }
 
 .hero-container-text {
    width: 50%;
-   height: 400px;
+   /* height: 400px; */
    display: flex;
    flex-direction: column;
    gap: 40px;
 }
 
 .hero-container-text-heading {
-   width: 60%;
+   max-width: 500px;
    color: var(--primary-font-color);
    font-size: 50px;
    font-weight: 600;
@@ -45,9 +50,137 @@
 .hero-container-btn button {
    background-color: var(--primary-font-color);
    color: var(--bg-color-main);
+   font-size: 12px;
    padding: 15px 25px;
    border: none;
    border-radius: 2px;
    cursor: pointer;
+   box-shadow: 0px 8px 16px -4px rgba(0, 0, 0, 0.15);
+}
+
+/* SECTION: BEST SELLING ITEMS */
+.best-selling-container {
+   margin-top: 50px;
+   font-family: "Roboto Slab", serif;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+}
+
+
+.best-selling-items-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 50px;
+}
+
+.best-selling-title{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+   color: var(--primary-font-color);
+}
+
+.best-selling-title .title {
+   font-size: 40px;
+}
+
+.card {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.item-card-image {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 380px;
+   max-width: 250px;
+}
+
+.item-card-image img {
+   height: 100%;
+   width: 100%;
+   box-shadow: 0px 8px 16px -4px rgba(0, 0, 0, 0.15);
+   border-radius: 2px;
+}
+
+.item-card-details {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.item-card-details p {
+   margin-top: 10px;
    font-size: 12px;
+}
+
+.item-card-pricing {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+}
+
+.see-all-btn button{
+   color: var(--primary-font-color);
+   padding: 10px 25px;
+   border: 1px solid #224F34;
+   border-radius: 2px;
+   background-color: transparent;
+   cursor: pointer;
+   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.see-all-btn button:hover {
+   background-color: var(--bg-color-heroSectionImage);
+   color: var(--bg-color-main);
+   border: 1px solid #224F34;
+   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  /* 1. Stack the text and image vertically instead of side-by-side */
+  .hero-container {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  /* 2. Give the text container full usage of the mobile width */
+  .hero-container-text {
+    width: 100%;
+    height: auto;
+    align-items: center; /* Center buttons/text visually for mobile */
+    gap: 20px;
+  }
+
+  /* 3. Drop down the aggressive desktop font size */
+  .hero-container-text-heading {
+    font-size: 32px;
+    width: 100%;
+  }
+
+  /* 4. Let the image fit cleanly inside mobile screens */
+  .hero-container-image {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .hero-container-image img {
+    height: auto;
+    width: 100%;
+  }
 }
