@@ -1,0 +1,28 @@
+.cart-icon {
+   height: 60px;
+   width: 50px;
+   display: flex;
+   flex-direction: column;
+   /* justify-content: center; */
+   align-items: center;
+}
+
+.cart-icon-count-box {
+   width: 50px;
+   height: 25px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   color: #fff;
+}
+
+.cart-icon-count {
+   background-color: rgb(56, 134, 69);
+   width: 25px;
+   height: 25px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   color: #fff;
+}
