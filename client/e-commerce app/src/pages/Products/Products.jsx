@@ -1,19 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './products.css'
+import { Link, useParams } from 'react-router';
 import Carousal from './carousal/carousal.jsx'
 import { carousalImageData } from '../../Data/carousalData/carousalData.js';
 import { ChevronLeft, ChevronRight } from '../../icons/Icons.jsx';
 import DropDown from './sideDropDown/dropDown.jsx';
 import PriceBar from './priceBar/PriceBar.jsx';
 import FreeShippingCheckbox from './free Shipping/FreeShippingCheckbox.jsx';
+import CategoryBtns from './Category buttons/CategoryBtns.jsx';
+import ProductCard from './Product card/ProductCard.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../features/Products List/productListSlice.js';
 
 function Products() {
+   // MOUNTING PRODUCTS UPON PAGE LOADING:
+   const dispatch = useDispatch();
+   useEffect(() => {
+      dispatch(fetchProducts())
+   }, [])
+   const productsList = useSelector((store) => store.productList);
+   console.log(productsList.products);
+   
+   // CAROUSAL
    const [currentIndex, setCurrentIndex] = useState(0);
    const length = carousalImageData.length - 1;
    function prevSlide() {
       setCurrentIndex((prevIndex) => prevIndex > 0 ? prevIndex - 1 : length)
    }
-
    function nextSlide() {
       setCurrentIndex((prevSlide) => prevSlide < length ? prevSlide + 1 : 0)
    }
@@ -44,12 +57,7 @@ function Products() {
                         <p>Category</p>
                      </div>
                      <div className='category-btns'>
-                        <button>Cpu</button>
-                        <button>Monitor</button>
-                        <button>Mouse</button>
-                        <button>Keyboard</button>
-                        <button>Headphone</button>
-                        <button>Casings</button>
+                        <CategoryBtns />
                      </div>
                   </div>
                   <div className='flex company'>
@@ -94,7 +102,15 @@ function Products() {
 
                </div>
                <div className='products-list'>
-                  <h2>Products list</h2>
+                  {
+                     productsList.products.map((product) => {
+                        return (
+                           <Link key={product.id} to={`/products/${product.id}`}>
+                              <ProductCard product={product} />
+                           </Link>
+                        )
+                     })
+                  }
                </div>
             </article>
          </section>
