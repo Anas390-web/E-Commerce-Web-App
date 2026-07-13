@@ -8,9 +8,9 @@ import DropDown from './sideDropDown/dropDown.jsx';
 import PriceBar from './priceBar/PriceBar.jsx';
 import FreeShippingCheckbox from './free Shipping/FreeShippingCheckbox.jsx';
 import CategoryBtns from './Category buttons/CategoryBtns.jsx';
-import ProductCard from './Product card/ProductCard.jsx';
+import ProductCard from './Product-card/ProductCard.jsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../features/Products List/productListSlice.js';
+import { fetchProducts } from '../../features/Products-List/productListSlice.js';
 
 function Products() {
    // MOUNTING PRODUCTS UPON PAGE LOADING:

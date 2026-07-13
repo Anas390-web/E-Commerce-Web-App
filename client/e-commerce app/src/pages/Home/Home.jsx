@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router';
 import { useEffect, useState } from 'react'
 import './home.css'
 import HeadphonesImage from './../../images/headphones-black.png';
 import ProductCard from './bestSellingItems';
 import CommentCard from './commentCard';
 import { commentsData1, commentsData2 } from '../../Data/Dummy-Data/dummyData';
-import {ChevronRight, ChevronLeft} from '../../icons/Icons.jsx'
+import { ChevronRight, ChevronLeft } from '../../icons/Icons.jsx'
 
 function Home() {
    const [slide, setSlide] = useState("previous");
@@ -16,7 +17,7 @@ function Home() {
       setSlide("next");
    }
    const currentComments = slide === "next" ? commentsData2 : commentsData1
-   
+
    return (
       <main>
          <section className='hero-section'>
@@ -29,7 +30,10 @@ function Home() {
                      <p>Explore our curated collection of premium computer accessories and cutting-edge gear tailored to power your daily grind and ultimate gaming sessions.</p>
                   </div>
                   <div className='hero-container-btn'>
-                     <button>EXPLORE NOW</button>
+                     <Link
+                        to="/products">
+                        <button >EXPLORE NOW</button>
+                     </Link>
                   </div>
                </div>
                <div className='hero-container-image'>
@@ -47,7 +51,10 @@ function Home() {
                   <ProductCard />
                </div>
                <div className='see-all-btn'>
-                  <button>See all →</button>
+                  <Link
+                  to="/products">
+                     <button>See all →</button>
+                  </Link>
                </div>
             </div>
          </section>
