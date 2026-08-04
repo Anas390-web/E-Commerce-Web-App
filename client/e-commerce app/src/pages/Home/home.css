@@ -44,7 +44,7 @@
 }
 
 .hero-container-image img {
-   height: 500px;
+   height: 400px;
 }
 
 .hero-container-btn button {
@@ -84,7 +84,7 @@
    justify-content: center;
    align-items: center;
    gap: 50px;
-   color: var(--primary-font-color);
+   color: var(--secondary-font-color);
 }
 
 .best-selling-title .title {
@@ -92,10 +92,18 @@
 }
 
 .card {
+   max-width: 300px;
+   width: 100%;
+   max-height: 350px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+}
+
+.best-selling-items-container a {
+   text-decoration: none;
+   color: var(--secondary-font-color);
 }
 
 .item-card-image {
@@ -133,9 +141,9 @@
 }
 
 .see-all-btn button{
-   color: var(--primary-font-color);
+   color: var(--secondary-font-color);
    padding: 10px 25px;
-   border: 1px solid #224F34;
+   border: 1px solid var(--secondary-font-color);
    border-radius: 2px;
    background-color: transparent;
    cursor: pointer;
@@ -200,7 +208,7 @@
 
 .feedback-corner-title p.title{
    font-size: 40px;
-   color: var(--primary-font-color);
+   color: var(--secondary-font-color);
 }
 
 .comments-container {
@@ -222,7 +230,7 @@
 .inverted-commas p {
    font-size: 40px;
    font-family: "Roboto Slab", serif;
-   color: var(--primary-font-color);
+   color: var(--secondary-font-color);
    margin-bottom: 20px;
 }
 
@@ -230,7 +238,7 @@
    font-weight: 700;
    font-size: 25px;
    font-family: "Roboto Slab", serif;
-   color: var(--primary-font-color);
+   color: var(--secondary-font-color);
    margin-bottom: 20px;
 }
 

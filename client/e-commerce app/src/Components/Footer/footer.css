@@ -1,6 +1,6 @@
 .footer-container {
-   background-color: var(--primary-font-color);
-   color: var(--bg-color-main);
+   background-color: var(--bg-color-heroSection);
+   color: var(--primary-font-color);
    min-height: 300px;
    padding: 0 40px;
    font-family: var(--primary-font-family);
@@ -54,7 +54,7 @@
 }
 
 .company-details a {
-   color: var(--bg-color-main);
+   color: var(--primary-font-color);
    font-size: 12px;
 }
 
@@ -75,24 +75,32 @@
    width: 100%;
    max-width: 300px;
    padding: 8px 4px;
-   border: 2px solid #6BC785;
+   border: 2px solid var(--bg-color-heroSectionImage);
 }
 
 .subscribe-input button {
    padding: 8px 4px;
    background-color: var(--bg-color-heroSectionImage);
    color: var(--primary-font-color);
-   border: 2px solid #6BC785;
+   border: 2px solid var(--bg-color-heroSectionImage)5;
    border-radius: 0 2px 2px 0;
    cursor: pointer;
 }
 
 .copyright {
    background-color: #141111;
-   color: var(--bg-color-main);
-   height: 70px;
+   color: #fff;
+   height: 80px;
+   padding-top: 10px;
    font-size: 20px;
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
+   gap: 10px;
+}
+
+.disclaimer {
+   height: 60px;
+   font-size: 10px;
 }

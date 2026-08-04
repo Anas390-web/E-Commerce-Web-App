@@ -7,6 +7,7 @@ import ProductCard from './bestSellingItems';
 import CommentCard from './commentCard';
 import { commentsData1, commentsData2 } from '../../Data/Dummy-Data/dummyData';
 import { ChevronRight, ChevronLeft } from '../../icons/Icons.jsx'
+import HeroImage from './HeroImage.jsx';
 
 function Home() {
    const [slide, setSlide] = useState("previous");
@@ -36,9 +37,7 @@ function Home() {
                      </Link>
                   </div>
                </div>
-               <div className='hero-container-image'>
-                  <img src={HeadphonesImage} alt="Headphones" />
-               </div>
+               <HeroImage />
             </div>
          </section>
          <section className='best-selling-section'>

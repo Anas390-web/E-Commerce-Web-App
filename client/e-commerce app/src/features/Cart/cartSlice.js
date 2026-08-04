@@ -11,7 +11,7 @@ export const selectCartItemWithProductDetails = createSelector(
    (products, cartItems) => {
       return cartItems.map((cartItem) => {
          const matchingProduct =  products.find((product) => {
-            return product.id === cartItem.productId
+            return product._id === cartItem.productId
          })
          return {
             ...matchingProduct,

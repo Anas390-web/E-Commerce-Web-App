@@ -17,7 +17,7 @@
 }
 
 .cart-icon-count {
-   background-color: rgb(56, 134, 69);
+   background-color: var(--bg-color-heroSectionImage);
    width: 25px;
    height: 25px;
    display: flex;

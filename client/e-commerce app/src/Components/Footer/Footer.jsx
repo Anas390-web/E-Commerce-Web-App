@@ -26,8 +26,8 @@ function Footer() {
                         About Us
                      </Link>
                      <Link
-                        to="/contact">
-                        Contact
+                        to="/products">
+                        Products
                      </Link>
                   </div>
                </div>
@@ -42,6 +42,9 @@ function Footer() {
          </div>
          <div className='copyright'>
             <span>© 2026 BuyMe All rights reserved</span>
+            <div className='disclaimer'>
+                  <p>Disclaimer: This project is created strictly for educational and portfolio demonstration purposes. All product images, prices, ratings, and associated brand trademarks are used solely as placeholder content for a non-commercial student project and remain the property of their respective owners.</p>
+               </div>
          </div>
       </footer>
    )

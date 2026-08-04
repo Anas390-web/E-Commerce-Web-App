@@ -17,8 +17,28 @@ div#root {
 :root {
    --primary-font-family: "Poppins", sans-serif;
    --heroSection-font-family: "Rufina", serif;
-   --primary-font-color: #224F34;
-   --bg-color-main: #ffffff;
-   --bg-color-heroSection: #C2EFD4;
-   --bg-color-heroSectionImage: #6BC785;
+   --primary-font-color: #FAFAFA;
+   --bg-color-main: #09090B;
+   --secondary-font-color: #0F172A;
+   --bg-color-heroSection: #18181B;
+   --bg-color-heroSectionImage: #22C55E;
 }
+
+/* ORIGINAL COLOR PALLETTES */
+/* --primary-font-color: #224F34;
+--bg-color-main: #ffffff;
+--bg-color-heroSection: #C2EFD4;
+--bg-color-heroSectionImage: #6BC785; */
+
+/* 2ND COLOR PALLETES */
+/* --primary-font-color: #F8FAFC;
+   --bg-color-main: #0F172A;
+   --bg-color-heroSection: #1E293B;
+   --bg-color-heroSectionImage: #06B6D4; */
+
+/* 3rd COLOR PALLETES */
+/* --primary-font-color: #0F172A;
+   --bg-color-main: #FFFFFF;
+   --secondary-font-color: #0F172A;
+   --bg-color-heroSection: #EFF6FF;
+   --bg-color-heroSectionImage: #2563EB; */

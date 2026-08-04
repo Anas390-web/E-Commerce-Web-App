@@ -15,21 +15,21 @@ export default function NavBar() {
                      <li>
                         <NavLink
                            to="/"
-                           style={({ isActive }) => ({ backgroundColor: isActive ? "#6BC785" : "#C2EFD4" })}>
+                           style={({ isActive }) => ({ backgroundColor: isActive ? "#06B6D4" : "" })}>
                            HOME
                         </NavLink>
                      </li>
                      <li>
                         <NavLink
                            to="/about"
-                           style={({ isActive }) => ({ backgroundColor: isActive ? "#6BC785" : "#C2EFD4" })}>
+                           style={({ isActive }) => ({ backgroundColor: isActive ? "#06B6D4" : "" })}>
                            ABOUT
                         </NavLink>
                      </li>
                      <li>
                         <NavLink
                            to="/products"
-                           style={({ isActive }) => ({ backgroundColor: isActive ? "#6BC785" : "#C2EFD4" })}>
+                           style={({ isActive }) => ({ backgroundColor: isActive ? "#06B6D4" : "" })}>
                            PRODUCTS
                         </NavLink>
                      </li>
