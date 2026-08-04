@@ -70,6 +70,17 @@
    cursor: pointer;
 }
 
+.nav-login-btn #sign-up {
+   background-color: var(--bg-color-heroSectionImage);
+   margin-left: 5px;
+   font-weight: bold;
+}
+
+.nav-login-btn #login:hover {
+   background-color: #fff;
+   color: #000;
+}
+
 /* MOBILE ALIGNMENT */
 @media (max-width: 768px) {
   /* 1. Prevent the main bar from breaking height constraints */

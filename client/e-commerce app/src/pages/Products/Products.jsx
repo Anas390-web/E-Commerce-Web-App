@@ -11,7 +11,7 @@ import CategoryBtns from './Category-buttons/CategoryBtns.jsx';
 import ProductCard from './Product-card/ProductCard.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../features/Products-List/productListSlice.js';
-import SearchBar from './Search Bar/SearchBar.jsx';
+import SearchBar from './Search-Bar/SearchBar.jsx';
 import ClearAllFilters from './Clear-Filters/ClearFilters.jsx';
 import Color from './Colors/Color.jsx';
 

@@ -42,7 +42,12 @@ export default function NavBar() {
                   </Link>
                </div>
                <div className='nav-login-btn'>
-                  <button>LOGIN</button>
+                  <Link to='/login'>
+                     <button id='login'>Login</button>
+                  </Link>
+                  <Link to='/register'>
+                     <button id='sign-up'>Sign Up</button>
+                  </Link>
                </div>
             </div>
          </nav>
