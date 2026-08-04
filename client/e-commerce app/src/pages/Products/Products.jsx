@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import './products.css'
-import { Link, useParams } from 'react-router';
+import { Link, useParams, useSearchParams } from 'react-router';
 import Carousal from './carousal/carousal.jsx'
 import { carousalImageData } from '../../Data/carousalData/carousalData.js';
 import { ChevronLeft, ChevronRight } from '../../icons/Icons.jsx';
 import DropDown from './sideDropDown/dropDown.jsx';
 import PriceBar from './priceBar/PriceBar.jsx';
-import FreeShippingCheckbox from './free Shipping/FreeShippingCheckbox.jsx';
-import CategoryBtns from './Category buttons/CategoryBtns.jsx';
+import FreeShippingCheckbox from './Free-Shipping/FreeShippingCheckbox.jsx';
+import CategoryBtns from './Category-buttons/CategoryBtns.jsx';
 import ProductCard from './Product-card/ProductCard.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../features/Products-List/productListSlice.js';
+import SearchBar from './Search Bar/SearchBar.jsx';
+import ClearAllFilters from './Clear-Filters/ClearFilters.jsx';
+import Color from './Colors/Color.jsx';
 
 function Products() {
-   // MOUNTING PRODUCTS UPON PAGE LOADING:
+   const [searchParams, setSearchParams] = useSearchParams();
+   // MOUNTING PRODUCTS UPON DISPATCHING AND WHEN A URL IS CHANGED:
    const dispatch = useDispatch();
    useEffect(() => {
-      dispatch(fetchProducts())
-   }, [])
+      dispatch(fetchProducts(searchParams.toString()))
+   }, [searchParams, dispatch])
+   // GETTING STATE FROM STORE:
    const productsList = useSelector((store) => store.productList);
-   console.log(productsList.products);
-   
    // CAROUSAL
    const [currentIndex, setCurrentIndex] = useState(0);
    const length = carousalImageData.length - 1;
@@ -49,9 +52,7 @@ function Products() {
          <section className='products-list-section'>
             <article className='products-grid-container'>
                <div className='sidebar'>
-                  <div className='flex search-bar'>
-                     <input type="text" placeholder='Search products' />
-                  </div>
+                  <SearchBar />
                   <div className='flex category'>
                      <div className='category-heading'>
                         <p>Category</p>
@@ -72,13 +73,7 @@ function Products() {
                      <div className='colors-heading'>
                         <p>Colors</p>
                      </div>
-                     <div className='colors-btns'>
-                        <button>All</button>
-                        <button className='red'></button>
-                        <button className='green'></button>
-                        <button className='blue'></button>
-                        <button className='yellow'></button>
-                     </div>
+                     <Color />
                   </div>
 
                   <div className='flex price'>
@@ -95,9 +90,7 @@ function Products() {
                      </div>
                   </div>
                   <div className='clear-all-filters'>
-                     <div className='clear-btn'>
-                        <button>Clear all Filters</button>
-                     </div>
+                     <ClearAllFilters />
                   </div>
 
                </div>
@@ -105,7 +98,7 @@ function Products() {
                   {
                      productsList.products.map((product) => {
                         return (
-                           <Link key={product.id} to={`/products/${product.id}`}>
+                           <Link key={product._id} to={`/products/${product._id}`}>
                               <ProductCard product={product} />
                            </Link>
                         )
