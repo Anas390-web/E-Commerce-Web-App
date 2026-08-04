@@ -1,14 +1,18 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-const url = 'https://fakestoreapi.com/products';
+// FETCHING ALL/FILTERED PRODUCTS:
 export const fetchProducts = createAsyncThunk(
    'products/fetchProducts',
-   async (name, thunkAPI) => {
+   async (queryParams, thunkAPI) => {
       try {
+         let url = 'http://localhost:3000/api/v1/products';
+         // FILTERED PRODUCTS:
+         if(queryParams){
+            url = `http://localhost:3000/api/v1/products?${queryParams}`
+         }
          const response = await fetch(url);
          const data = await response.json();
-         return data;
-         console.log(data);
+         return data.products;
       } catch (error) {
          console.log(error);
          return thunkAPI.rejectWithValue(error.message);

@@ -8,8 +8,7 @@ import { Link } from 'react-router'
 function Cart() {
    const dispatch = useDispatch();
    // CALLING STATES MERGER SELECTOR FUNCTION TO GET THE MERGED STATE DATA (which is not actually merged but explicitly merged to input our cart data)
-   const cartProducts = useSelector(selectCartItemWithProductDetails)
-   console.log(cartProducts);
+   const cartProducts = useSelector(selectCartItemWithProductDetails);
 
    // FOR TOTAL AMOUNT:
    let subtotal = 0;
@@ -30,13 +29,13 @@ function Cart() {
                { 
                   cartProducts.map((cartProduct) => {
                      return (
-                        <div key={cartProduct.id} className='cart-item-details'>
+                        <div key={cartProduct._id} className='cart-item-details'>
                            <div className='item-image'>
-                              <img src={cartProduct.image} alt={cartProduct.title} />
+                              <img src={`http://localhost:3000${cartProduct.img}`} alt={cartProduct.name} />
                            </div>
                            <div className='item-details'>
                               <div className='item-title'>
-                                 <p>{cartProduct.title}</p>
+                                 <p>{cartProduct.name}</p>
                               </div>
                               <div className='stock'>
                                  <p>In Stock</p>
@@ -45,12 +44,12 @@ function Cart() {
                                  ${cartProduct.price}
                               </div>
                               <div className='add-or-delete'>
-                                 <button onClick={() => dispatch(decrement(cartProduct.id))} className='delete-icon'><Delete /></button>
+                                 <button onClick={() => dispatch(decrement(cartProduct._id))} className='delete-icon'><Delete /></button>
                                  <p>{cartProduct.productCount}</p>
-                                 <button onClick={() => dispatch(increment(cartProduct.id))}>+</button>
+                                 <button onClick={() => dispatch(increment(cartProduct._id))}>+</button>
                               </div>
                               <div className='delete-btn'>
-                                 <button onClick={() => dispatch(deleteItem(cartProduct.id))}>Delete</button>
+                                 <button onClick={() => dispatch(deleteItem(cartProduct._id))}>Delete</button>
                               </div>
                            </div>
                         </div>

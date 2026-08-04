@@ -26,12 +26,12 @@ function ProductItem() {
    }, [])
 
    // GETTING DATA/STATE FROM THE STORE
-   const productData = useSelector((store) => store.productList.products);
+   const productData = useSelector((store) => store.productList);
 
    // TO FIND THE DATA OF THE EXACT PRODUCT USER IS LOOKING FOR FROM URL ID:
    const { productId } = useParams();
-   const product = productData.find((product) => {
-      return product.id === Number(productId);
+   const product = productData.products.find((product) => {
+      return product._id === (productId);
    })
    // console.log(product);
 
@@ -46,18 +46,15 @@ function ProductItem() {
                <div className='product-item-grid'>
                   <div className='product-item-images'>
                      <div className='single-image'>
-                        <img src={product.image} alt="" />
-                     </div>
-                     <div className='other-images'>
-                        otherImagesComponent
+                        <img src={`http://localhost:3000${product.img}`} alt="" />
                      </div>
                   </div>
                   <div className='flex-details product-item-details'>
-                     <div className='flex-details title'>
-                        <h2>{product.title}</h2>
+                     <div className='flex-details name'>
+                        <p>{product.name}</p>
                      </div>
                      <div className='flex-details rating'>
-                        <p>Rating: {product.rating.rate}</p>
+                        <p>Rating: {product.rating}</p>
                      </div>
                      <div className='flex-details price'>
                         <p>${product.price}</p>
@@ -68,15 +65,11 @@ function ProductItem() {
                      <div className='column-details'>
                         <div className='available'>
                            <p className='heading'>Available:</p>
-                           <p>In Stock</p>
-                        </div>
-                        <div className='sku'>
-                           <p className='heading'>SKU:</p>
-                           <p>{product.id}</p>
+                           {product.inStock && <p>In Stock</p> }
                         </div>
                         <div className='sku'>
                            <p className='heading'>Brand:</p>
-                           <p>Corsair</p>
+                           <p>{product.company}</p>
                         </div>
                      </div>
                      <hr />
@@ -88,7 +81,7 @@ function ProductItem() {
                            onClick={
                               () => dispatch(addToCart({
                                  productCount: productCount,
-                                 productId: Number(productId)
+                                 productId: productId
                               }))}
                            className='add-to-cart-btn'>
                            ADD TO CART

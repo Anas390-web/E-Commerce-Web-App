@@ -10,11 +10,11 @@ function ProductCard({product}) {
   return (
     <div className='product-card'>
       <div className='card-image'>
-         <img src={product.image} alt="" />
+         <img src={`http://localhost:3000${product.img}`} alt={product.name} />
       </div>
       <div className='card-details'>
-         <p>{product.title}</p>
-         <p>${product.price}</p>
+         <p id='card-product-name'>{product.name}</p>
+         <p id='card-product-price'>${product.price}</p>
       </div>
     </div>
   )
