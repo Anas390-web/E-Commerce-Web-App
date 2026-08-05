@@ -2,6 +2,9 @@ import 'dotenv/config'
 import express from 'express'
 import connectDB from './db/connectDb.js'
 import router from './routes/products.js';
+import authRouter from './routes/users.js';
+import cartRouter from './routes/cartItems.js';
+import authentication from './middlewares/auth.js';
 import cors from 'cors'
 import notFoundMiddlerware from './middlewares/notFound.js';
 import errorHandlerMiddleware from './middlewares/errorHandlerMiddleware.js';
@@ -17,6 +20,8 @@ app.use(express.static('public'));
 
 // routes:
 app.use('/api/v1/products', router);
+app.use('/api/v1/users', authRouter);
+app.use('/api/v1/cartProducts', authentication, cartRouter);
 
 // error Handlers: order of code matters and 4 argument function will be triggered for server error:
 app.use(notFoundMiddlerware);
