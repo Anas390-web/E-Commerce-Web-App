@@ -18,8 +18,8 @@ function ProductCard() {
       .filter((item) => (item.isBestSelling === true))
       .map((item) => {
          return (
-            <Link to={`/products/${item._id}`}>
-               <div key={item._id} className='card'>
+            <Link key={item._id}  to={`/products/${item._id}`}>
+               <div className='card'>
                   <div className='item-card-image'>
                      <img height="40px" src={`http://localhost:3000${item.img}`} alt={item.name} />
                   </div>
