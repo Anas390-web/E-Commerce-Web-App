@@ -56,13 +56,13 @@
    color: var(--primary-font-color);
 }
 
-.nav-login-btn {
+.nav-auth-btn {
    display: flex;
    justify-content: center;
    align-items: flex-end;
 }
 
-.nav-login-btn button {
+.nav-auth-btn button {
    padding: 10px 20px;
    background-color: var(--bg-color-heroSection);
    border: 1px solid var(--primary-font-color);
@@ -70,15 +70,39 @@
    cursor: pointer;
 }
 
-.nav-login-btn #sign-up {
+.nav-auth-btn #sign-up {
    background-color: var(--bg-color-heroSectionImage);
    margin-left: 5px;
    font-weight: bold;
 }
 
-.nav-login-btn #login:hover {
+.nav-auth-btn #login:hover {
    background-color: #fff;
    color: #000;
+}
+
+.nav-auth-btn #logout {
+   border: 1px solid red;
+   color: red;
+   margin-left: 20px;
+}
+
+.nav-auth-btn #logout:hover {
+   border: 1px solid #fff;
+   background-color: red;
+   color: #fff;
+}
+
+.nav-auth-btn #username {
+   height: auto;
+   width: auto;
+   background-color: var(--bg-color-heroSection);
+   color: var(--primary-font-color);
+   font-family: var(--primary-font-family);
+   font-size: 18px;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
 }
 
 /* MOBILE ALIGNMENT */
