@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
-const CartSchema = ({
+// USER CART ITEMS:
+const CartSchema = new mongoose.Schema({
    items: [
       {
          product: {
@@ -8,11 +9,11 @@ const CartSchema = ({
             ref: 'Product',
             required: [true, 'Product is required']
          },
-         quanity: {
+         quantity: {
             type: Number,
             required: [true, 'Quantity is required'],
             default: 1,
-            min: 1
+            min: [1, 'Quantity cannot be less than 1']
          }
       }
    ],
@@ -22,7 +23,7 @@ const CartSchema = ({
       required: [true, 'Please provide user id'],
       unique: true
    }
-}, { timeStamps: true })
+}, { timestamps: true })
 
 const Cart = mongoose.model('Cart', CartSchema);
 export default Cart;
