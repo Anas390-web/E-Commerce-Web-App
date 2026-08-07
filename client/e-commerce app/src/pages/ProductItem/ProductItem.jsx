@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import './productItem.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { fetchProducts } from '../../features/Products-List/productListSlice';
 import IncrementDecrement from './increment-decrement/IncrementDecrement';
 import { addToCart } from '../../features/Cart/cartSlice';
 
 function ProductItem() {
+   const navigate = useNavigate();
+   const dispatch = useDispatch();
+   // ACCESSING TOKEN FROM STORE:
+   const { token } = useSelector((store) => store.auth);
    // INCREMENT AND DECREMENT BUTTONS:
    const [productCount, setProductCount] = useState(1);
    function decrement() {
@@ -20,7 +24,6 @@ function ProductItem() {
    }
 
    // IN CASE USER REFRESHES OR COMES DIRECTLY AT THE PRODUCT PAGE:
-   const dispatch = useDispatch();
    useEffect(() => {
       dispatch(fetchProducts());
    }, [])
@@ -38,6 +41,16 @@ function ProductItem() {
    // IF FINDING TAKES TIME OR COULD NOT FIND SHOW THIS INSTEAD OF AN ERROR:
    if (!product) return <div>Loading...</div>;
 
+   // IF TOKEN IS NOT PRESENT, GO TO LOGIN PAGE BY CLICKING ADD TO CART BUTTON:
+   function handleAddToCart() {
+      if (!token) {
+         navigate('/login');
+      }
+      dispatch(addToCart({
+         productCount: productCount,
+         productId: productId
+      }))
+   }
 
    return (
       <main>
@@ -65,7 +78,7 @@ function ProductItem() {
                      <div className='column-details'>
                         <div className='available'>
                            <p className='heading'>Available:</p>
-                           {product.inStock && <p>In Stock</p> }
+                           {product.inStock && <p>In Stock</p>}
                         </div>
                         <div className='sku'>
                            <p className='heading'>Brand:</p>
@@ -78,11 +91,7 @@ function ProductItem() {
                            <IncrementDecrement productCount={productCount} increment={increment} decrement={decrement} />
                         </div>
                         <button
-                           onClick={
-                              () => dispatch(addToCart({
-                                 productCount: productCount,
-                                 productId: productId
-                              }))}
+                           onClick={handleAddToCart}
                            className='add-to-cart-btn'>
                            ADD TO CART
                         </button>
