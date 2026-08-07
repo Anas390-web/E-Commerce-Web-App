@@ -3,8 +3,16 @@ import './auth.css'
 import { Link } from 'react-router'
 import { useState } from 'react'
 import { Eye, EyeSlash } from '../../icons/Icons.jsx'
+import { loginUser } from '../../features/Authentication/authSlice.js'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
 
 function Login() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  // ACCESSING AUTH GLOBAL STATE FROM STORE:
+  const { error } = useSelector((store) => store.auth);
+  
   // LOGIC PAGE LOCAL FORM STATE
   const [formData, setFormData] = useState({
     email: '',
@@ -15,6 +23,18 @@ function Login() {
       ...formData,
       [e.target.name]: e.target.value
     })
+  }
+
+  // TAKE USER TO THE HOME PAGE IF TOKEN EXISTS:
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      // .unwrap() tells that if the token exists or not that is why we don't need to see token exists or not from localStorage:
+      await dispatch(loginUser(formData)).unwrap()
+      navigate('/');
+    } catch (error) {
+      console.log('Login failed' ,error.message);
+    }
   }
 
   // SHOW PASSWORD:
@@ -29,11 +49,15 @@ function Login() {
           <div className='auth-main-heading'>
             <h1>Login</h1>
           </div>
-          <form className='auth-form'>
-
+          <form
+            onSubmit={handleSubmit}
+            className='auth-form'>
             <div className='auth-label'>
               <label>
                 <p>Email address</p>
+                {
+                  error && formData.email.length <= 0 ? <p style={{color: "red", fontSize: "11px"}}>Email is required!</p>: null
+                }
                 <input
                   type="text"
                   name="email"
@@ -45,6 +69,9 @@ function Login() {
             <div className='auth-label'>
               <label>
                 <p>Password</p>
+                {
+                  error ? <p style={{color: "red", fontSize: "11px"}}>Invalid Password, try again!</p>: null
+                }
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
@@ -63,7 +90,7 @@ function Login() {
               </label>
             </div>
             <div className='auth-btn'>
-              <button>Login</button>
+                <button>Login</button>
             </div>
             <div className='haveAccount'>
               <p>Don't have an account?<Link to='/register'>Sign Up</Link></p>
