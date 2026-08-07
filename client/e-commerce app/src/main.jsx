@@ -10,9 +10,9 @@ import Cart from './pages/Cart/Cart.jsx'
 import { Provider } from 'react-redux'
 import { store } from '../store.js'
 import ProductItem from './pages/ProductItem/ProductItem.jsx'
-import SignUp from './pages/Register-Login/SignUp.jsx'
+import SignUp from './pages/auth/SignUp.jsx'
 import AuthLayout from './Components/Auth-Layout/Auth-Layout.jsx'
-import Login from './pages/Register-Login/Login.jsx'
+import Login from './pages/auth/Login.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
