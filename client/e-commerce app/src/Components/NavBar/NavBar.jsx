@@ -31,21 +31,21 @@ export default function NavBar() {
                      <li>
                         <NavLink
                            to="/"
-                           style={({ isActive }) => ({ backgroundColor: isActive ? "#06B6D4" : "" })}>
+                           style={({ isActive }) => ({ borderBottom: isActive ? "2px solid #05404b" : "" })}>
                            HOME
                         </NavLink>
                      </li>
                      <li>
                         <NavLink
                            to="/about"
-                           style={({ isActive }) => ({ backgroundColor: isActive ? "#06B6D4" : "" })}>
+                           style={({ isActive }) => ({ borderBottom: isActive ? "2px solid #05404b" : "" })}>
                            ABOUT
                         </NavLink>
                      </li>
                      <li>
                         <NavLink
                            to="/products"
-                           style={({ isActive }) => ({ backgroundColor: isActive ? "#06B6D4" : "" })}>
+                           style={({ isActive }) => ({ borderBottom: isActive ? "2px solid #05404b" : "" })}>
                            PRODUCTS
                         </NavLink>
                      </li>
