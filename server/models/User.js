@@ -43,7 +43,10 @@ UserSchema.methods.createJwt = function () {
    return jwt.sign(
       {userId: this._id, username: this.username},
       process.env.JWT_SECRET_KEY,
-      {expiresIn: process.env.JWT_EXPIRY_TIME}
+      {
+         algorithm: 'RS256',
+         expiresIn: process.env.JWT_EXPIRY_TIME
+      }
    )
 }
 
