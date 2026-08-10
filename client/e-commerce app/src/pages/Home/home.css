@@ -2,10 +2,9 @@
 
 
 .hero-container {
-   /* height: 650px; */
    min-height: 70vh;
    width: 100%;
-   background-color: var(--bg-color-heroSection);
+   background: var(--bg-color-heroSection);
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
@@ -14,7 +13,6 @@
 
 .hero-container-text {
    width: 50%;
-   /* height: 400px; */
    display: flex;
    flex-direction: column;
    gap: 40px;
@@ -48,7 +46,7 @@
 }
 
 .hero-container-btn button {
-   background-color: var(--primary-font-color);
+   background-color: var(--navBar-font-color);
    color: var(--bg-color-main);
    font-size: 12px;
    padding: 15px 25px;
