@@ -4,13 +4,25 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router';
 import { fetchProducts } from '../../features/Products-List/productListSlice';
 import IncrementDecrement from './increment-decrement/IncrementDecrement';
-import { addToCart } from '../../features/Cart/cartSlice';
+import { saveUserCartItem } from '../../features/Cart/cartSlice';
 
 function ProductItem() {
    const navigate = useNavigate();
    const dispatch = useDispatch();
    // ACCESSING TOKEN FROM STORE:
    const { token } = useSelector((store) => store.auth);
+   // IF TOKEN IS NOT PRESENT, GO TO LOGIN PAGE BY CLICKING ADD TO CART BUTTON:
+   function handleAddToCart() {
+      if (!token) {
+         navigate('/login');
+      }
+      // SENDING DATA TO SERVER:
+      dispatch(saveUserCartItem({
+         productCount: productCount,
+         productId: productId
+      }))
+      navigate('/cart')
+   }
    // INCREMENT AND DECREMENT BUTTONS:
    const [productCount, setProductCount] = useState(1);
    function decrement() {
@@ -23,7 +35,7 @@ function ProductItem() {
       setProductCount(productCount + 1)
    }
 
-   // IN CASE USER REFRESHES OR COMES DIRECTLY AT THE PRODUCT PAGE:
+   // IN CASE USER REFRESHES OR COMES DIRECTLY AT THE PRODUCT ITEM PAGE:
    useEffect(() => {
       dispatch(fetchProducts());
    }, [])
@@ -41,17 +53,6 @@ function ProductItem() {
    // IF FINDING TAKES TIME OR COULD NOT FIND SHOW THIS INSTEAD OF AN ERROR:
    if (!product) return <div>Loading...</div>;
 
-   // IF TOKEN IS NOT PRESENT, GO TO LOGIN PAGE BY CLICKING ADD TO CART BUTTON:
-   function handleAddToCart() {
-      if (!token) {
-         navigate('/login');
-      }
-      dispatch(addToCart({
-         productCount: productCount,
-         productId: productId
-      }))
-   }
-
    return (
       <main>
          <section className='product-item-section'>
@@ -59,7 +60,7 @@ function ProductItem() {
                <div className='product-item-grid'>
                   <div className='product-item-images'>
                      <div className='single-image'>
-                        <img src={`http://localhost:3000${product.img}`} alt="" />
+                        <img src={`${import.meta.env.VITE_SERVER_URL}${product.img}`} alt="" />
                      </div>
                   </div>
                   <div className='flex-details product-item-details'>
