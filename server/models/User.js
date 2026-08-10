@@ -44,7 +44,7 @@ UserSchema.methods.createJwt = function () {
       {userId: this._id, username: this.username},
       process.env.JWT_SECRET_KEY,
       {
-         algorithm: 'RS256',
+         algorithm: 'HS256',
          expiresIn: process.env.JWT_EXPIRY_TIME
       }
    )
