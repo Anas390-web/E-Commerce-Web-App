@@ -17,7 +17,7 @@ const authentication = async (req, res, next) => {
    // VERIFY TOKEN:
    try {
       const payLoad = await jwt.verify(token, process.env.JWT_SECRET_KEY, {
-         algorithms: ['RS256']
+         algorithms: ['HS256']
       });
       const { userId, username } = payLoad;
       req.user = { userId, username }
