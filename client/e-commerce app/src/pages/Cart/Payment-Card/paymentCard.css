@@ -1,0 +1,103 @@
+.payment-flex {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.payment-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 410px;
+  width: 90%;
+  animation: popUp 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.payment-heading {
+   color: green;
+   width: 100%;
+   padding: 0 0 10px 0;
+   border-bottom: 1px solid green;
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   font-size: 27px;
+}
+
+.payment-btns {
+   display: flex;
+   gap: 20px;
+}
+
+.payment-btns button {
+   width: 100px;
+   padding: 4px 20px;
+   border-radius: 3px;
+   border: 1px solid black;
+   font-family: var(--primary-font-family);
+   font-size: 16px;
+   cursor: pointer;
+}
+
+.payment-btns button.payment-yes {
+   background-color: rgb(87, 170, 87);
+   color: #fff;
+}
+.payment-btns button.payment-cancel {
+   background-color: rgb(223, 76, 76);
+   color: #fff;
+}
+
+/* SUCCESS MSG */
+.success-msg-box {
+  background: #ffffff;
+  color: green;
+  height: 170px;
+  max-width: 350px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  animation: popUp 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.close-success-msg-btn button{
+  background-color: rgb(87, 170, 87);
+  color: #fff;
+  width: 100px;
+  padding: 4px 20px;border-radius: 3px;
+  border: 1px solid black;
+  font-family: var(--primary-font-family);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
