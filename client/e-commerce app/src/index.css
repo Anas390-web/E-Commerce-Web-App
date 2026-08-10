@@ -15,11 +15,19 @@ div#root {
 }
 
 :root {
-   --primary-font-family: "Poppins", sans-serif;
-   --heroSection-font-family: "Rufina", serif;
-   --primary-font-color: #FAFAFA;
-   --bg-color-main: #09090B;
-   --secondary-font-color: #0F172A;
-   --bg-color-heroSection: #18181B;
-   --bg-color-heroSectionImage: #22C55E;
+  --primary-font-family: "Poppins", sans-serif;
+  --heroSection-font-family: "Space Grotesk", sans-serif;
+  
+  --primary-font-color: #020617;
+  --secondary-font-color: #334155;
+  --navBar-font-color: #0F172A;
+  --footer-font-color: #0F172A;
+
+  --bg-color-main: #CBD5E1;
+  --bg-color-heroSection: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+  --bg-color-heroSectionImage: #0F172A;
+
+  --bg-color-navBar: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+  --bg-color-footer: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
 }
+
