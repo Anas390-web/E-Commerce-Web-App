@@ -1,6 +1,6 @@
 .footer-container {
-   background-color: var(--bg-color-heroSection);
-   color: var(--primary-font-color);
+   background: var(--bg-color-footer);
+   color: var(--footer-font-color);
    min-height: 300px;
    padding: 0 40px;
    font-family: var(--primary-font-family);
@@ -54,7 +54,7 @@
 }
 
 .company-details a {
-   color: var(--primary-font-color);
+   color: var(--footer-font-color);
    font-size: 12px;
 }
 
@@ -79,9 +79,9 @@
 }
 
 .subscribe-input button {
-   padding: 8px 4px;
+   padding: 10px 4px;
    background-color: var(--bg-color-heroSectionImage);
-   color: var(--primary-font-color);
+   color: var(--bg-color-main);
    border: 2px solid var(--bg-color-heroSectionImage)5;
    border-radius: 0 2px 2px 0;
    cursor: pointer;
