@@ -1,5 +1,5 @@
 .nav-bar-container {
-   background-color: var(--bg-color-heroSection);
+   background: var(--bg-color-navBar);
    height: 80px;
    width: auto; /*prev width: 50%*/
    display: flex;
@@ -15,7 +15,7 @@
 }
 
 .nav-title h2 {
-   color: var(--primary-font-color);
+   color: var(--navBar-font-color);
    font-family: var(--primary-font-family);
 }
 
@@ -40,7 +40,7 @@
 
 .nav-bar-container ul li a {
    text-decoration: none;
-   color: var(--primary-font-color);
+   color: var(--navBar-font-color);
 }
 
 .links {
@@ -53,7 +53,7 @@
 .links svg {
    width: 33px;
    height: 33px;
-   color: var(--primary-font-color);
+   color: var(--navBar-font-color);
 }
 
 .nav-auth-btn {
@@ -65,13 +65,14 @@
 .nav-auth-btn button {
    padding: 10px 20px;
    background-color: var(--bg-color-heroSection);
-   border: 1px solid var(--primary-font-color);
-   color: var(--primary-font-color);
+   border: 1px solid var(--navBar-font-color);
+   color: var(--navBar-font-color);
    cursor: pointer;
 }
 
 .nav-auth-btn #sign-up {
    background-color: var(--bg-color-heroSectionImage);
+   color: #fff;
    margin-left: 5px;
    font-weight: bold;
 }
@@ -97,7 +98,7 @@
    height: auto;
    width: auto;
    background-color: var(--bg-color-heroSection);
-   color: var(--primary-font-color);
+   color: var(--navBar-font-color);
    font-family: var(--primary-font-family);
    font-size: 18px;
    display: flex;
