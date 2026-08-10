@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import './auth.css'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { Eye, EyeSlash } from '../../icons/Icons.jsx'
 import { registerUser } from '../../features/Authentication/authSlice.js'
 import { useDispatch } from 'react-redux'
 
 function SignUp() {
    const dispatch = useDispatch();
+   const navigate = useNavigate();
    
    // SIGN UP PAGE LOCAL FORM STATE
    const [formData, setFormData] = useState({
@@ -25,6 +26,7 @@ function SignUp() {
    function handleSubmit(e) {
       e.preventDefault();
       dispatch(registerUser(formData))
+      navigate('/login');
    }
    // SHOW PASSWORD:
    const [showPassword, setShowPassword] = useState({
@@ -61,7 +63,7 @@ function SignUp() {
                         <input
                            type="text"
                            name="username"
-                           placeholder='enter username'
+                           placeholder='enter testing username'
                            value={formData.username}
                            onChange={handleChange} />
                      </label>
@@ -72,7 +74,7 @@ function SignUp() {
                         <input
                            type="text"
                            name="email"
-                           placeholder='enter email address'
+                           placeholder='enter testing email address'
                            value={formData.email}
                            onChange={handleChange} />
                      </label>
@@ -83,7 +85,7 @@ function SignUp() {
                         <input
                            type={showPassword.passwordVisible ? "text" : "password"}
                            name="password"
-                           placeholder='enter password'
+                           placeholder='enter testing password'
                            value={formData.password}
                            onChange={handleChange} />
                         <button
@@ -111,7 +113,7 @@ function SignUp() {
                         <input
                            type={showPassword.confirmPasswordVisible ? "text" : "password"}
                            name="confirmPassword"
-                           placeholder='enter password again'
+                           placeholder='enter testing password again'
                            value={formData.confirmPassword}
                            onChange={handleChange} />
                         <button
