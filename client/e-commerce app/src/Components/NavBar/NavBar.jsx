@@ -11,10 +11,6 @@ export default function NavBar() {
    const dispatch = useDispatch();
    // ACCESSING USERNAME FROM AUTH SLICE FROM STORE:
    const { username } = useSelector((store) => store.auth);
-   // TO DISPLAY USERNAME UPON RE-LOADING PAGE:
-   useEffect(() => {
-      dispatch(fetchUserDetails())
-   }, [dispatch])
    // ACCESSING TOKEN:
    const token = localStorage.getItem('accessToken');
    // TO NAVIGATE BACK TO LOGIN PAGE IF USER LOGGED-OU:T
