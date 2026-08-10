@@ -8,7 +8,7 @@
 }
 
 .about-page-hero-section {
-   min-height: 600px;
+   min-height: 70vh;
    width: 100%;
    background: var(--bg-color-heroSection);
    display: flex;
