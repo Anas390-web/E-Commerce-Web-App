@@ -34,7 +34,7 @@ function About() {
                            <p>Our Journey Started with a Single Desk</p>
                         </div>
                         <div className='about-us-paragraph'>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maxime natus iste obcaecati eaque neque deleniti, suscipit labore placeat consectetur veritatis ratione, alias earum totam fuga molestiae nobis iure voluptate, quos cumque corrupti mollitia itaque? Doloremque possimus quia labore deserunt, numquam ut. Praesentium assumenda libero repellat, delectus nesciunt nisi quidem repellendus.</p>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maxime natus iste obcaecati eaque neque deleniti, suscipit labore placeat consectetur veritatis ratione, alias earum totam fuga molestiae nobis iure voluptate, quos cumque corrupti mollitia itaque? Doloremque possimus quia labore deserunt, numquam ut. Praesentium assumenda libero repellat, delectus nesciunt nisi quidem repellendus. Praesentium assumenda libero repellat, delectus nesciunt nisi quidem repellendus. Praesentium assumenda libero repellat, delectus nesciunt nisi quidem repellendus.</p>
                         </div>
                      </div>
                      <div className='about-us-image'>
