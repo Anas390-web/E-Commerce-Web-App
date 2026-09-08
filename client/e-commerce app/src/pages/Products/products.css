@@ -373,3 +373,32 @@
    color: #32a861;
    font-size: 18px;
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+   .products-grid-container {
+      grid-template-columns: 1fr;
+   }
+
+   .sidebar {
+      position: static;
+      width: 100%;
+   }
+
+   .category-heading,
+   .company-heading {
+      width: 100%;
+   }
+
+   .company-dropdown {
+      width: 100%;
+   }
+
+   .search-bar input {
+      width: 100%;
+   }
+
+   .products-list {
+      width: 100%;
+   }
+}
