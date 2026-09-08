@@ -4,15 +4,27 @@ import './navBar.css'
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserDetails, logout } from '../../features/Authentication/authSlice';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 export default function NavBar() {
+   const [isOpen, setIsOpen] = useState(false);
    const navigate = useNavigate();
    const dispatch = useDispatch();
    // ACCESSING USERNAME FROM AUTH SLICE FROM STORE:
    const { username } = useSelector((store) => store.auth);
    // ACCESSING TOKEN:
    const token = localStorage.getItem('accessToken');
+   // TOGGLE MENU:
+   const toggleMenu = () => {
+      setIsOpen(!isOpen);
+   }
+
+   // HIDE THE MENU WHEN THE USER CLICKS ON ANY OPTION:
+   const closeMenu = () => {
+      setIsOpen(false);
+   };
+
    // TO NAVIGATE BACK TO LOGIN PAGE IF USER LOGGED-OU:T
    function handleLogOutClick(e) {
       e.preventDefault();
@@ -26,11 +38,12 @@ export default function NavBar() {
                <div className='nav-title'>
                   <h2>BuyMe</h2>
                </div>
-               <div className='navLinks'>
+               <div className={`navLinks ${isOpen ? 'show-nav' : ''}`}>
                   <ul>
                      <li>
                         <NavLink
                            to="/"
+                           onClick={closeMenu}
                            style={({ isActive }) => ({ borderBottom: isActive ? "2px solid #05404b" : "" })}>
                            HOME
                         </NavLink>
@@ -38,6 +51,7 @@ export default function NavBar() {
                      <li>
                         <NavLink
                            to="/about"
+                           onClick={closeMenu}
                            style={({ isActive }) => ({ borderBottom: isActive ? "2px solid #05404b" : "" })}>
                            ABOUT
                         </NavLink>
@@ -45,6 +59,7 @@ export default function NavBar() {
                      <li>
                         <NavLink
                            to="/products"
+                           onClick={closeMenu}
                            style={({ isActive }) => ({ borderBottom: isActive ? "2px solid #05404b" : "" })}>
                            PRODUCTS
                         </NavLink>
@@ -77,6 +92,9 @@ export default function NavBar() {
 
                   }
                </div>
+               <button type="button" className="nav-toggle" onClick={toggleMenu}>
+                  {isOpen ? <FaTimes /> : <FaBars />}
+               </button>
             </div>
          </nav>
       </header>
