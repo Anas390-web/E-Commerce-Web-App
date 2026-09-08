@@ -15,6 +15,7 @@ function ProductItem() {
    function handleAddToCart() {
       if (!token) {
          navigate('/login');
+         return; // TO STOP THE NEXT LINES OF CODE
       }
       // SENDING DATA TO SERVER:
       dispatch(saveUserCartItem({
